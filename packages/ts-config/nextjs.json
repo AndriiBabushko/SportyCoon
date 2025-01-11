@@ -3,6 +3,7 @@
   "display": "Next.js",
   "extends": "./base.json",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "strict": true,
     "moduleResolution": "Bundler",
     "allowJs": true,

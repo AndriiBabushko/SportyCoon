@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import type { Metadata } from "next";
-import { RootLayout } from "@admin/components/layouts";
+import { DashboardLayout } from "@admin/components/layouts";
 import { Content } from "./components";
 
 export const metadata: Metadata = {
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 
 export default function Root(): JSX.Element {
   return (
-    <RootLayout>
+    <DashboardLayout>
       <Content />
-    </RootLayout>
+    </DashboardLayout>
   );
 }

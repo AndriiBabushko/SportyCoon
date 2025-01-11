@@ -35,14 +35,13 @@
     "DESCRIPTION": "Choose your preferred authentication method:",
     "LOGIN": "Login",
     "REGISTER": "Register",
-    "THIRD_PARTY": "Or authenticate with third-party services:",
-    "GOOGLE": "Google",
-    "SPOTIFY": "Spotify"
+    "THIRD_PARTY": "Or authenticate with third-party services:"
   },
   "DASHBOARD": {
     "AVATAR_ALT": "User avatar",
     "NO_USERNAME": "No Username",
-    "LOGOUT": "Logout"
+    "LOGOUT": "Logout",
+    "SETTINGS": "Settings"
   },
   "LOGIN": {
     "TITLE": "Login",
@@ -55,12 +54,55 @@
     }
   },
   "REGISTER": {
-    "TITLE": "Create account",
-    "FIRST_NAME_PLACEHOLDER": "Enter your first name",
-    "LAST_NAME_PLACEHOLDER": "Enter your last name",
-    "EMAIL_PLACEHOLDER": "Enter your email",
-    "PASSWORD_PLACEHOLDER": "Enter your password",
-    "CONFIRM_PASSWORD_PLACEHOLDER": "Confirm your password"
+    "STEPS": {
+      "ACCOUNT_DETAILS": "Account Details",
+      "PHYSICAL_INFO": "Physical Info",
+      "GOALS_FITNESS": "Goals & Fitness",
+      "PERFORMANCE": "Performance"
+    },
+    "FIELDS": {
+      "USERNAME": "Username",
+      "EMAIL": "Email",
+      "PASSWORD": "Password",
+      "FULL_NAME": "Full Name",
+      "GENDER": "Gender",
+      "HEIGHT": {
+        "VALUE": "Height",
+        "UNIT": "Height Unit"
+      },
+      "WEIGHT": {
+        "VALUE": "Weight",
+        "UNIT": "Weight Unit"
+      },
+      "GOALS": "Goals",
+      "FITNESS_LEVEL": "Fitness Level",
+      "PERFORMANCE": {
+        "PULL_UPS": "Max Pull-Ups",
+        "PUSH_UPS": "Max Push-Ups",
+        "SQUATS": "Max Squats",
+        "DIPS": "Max Dips"
+      }
+    },
+    "ERRORS": {
+      "USERNAME_REQUIRED": "Username is required",
+      "EMAIL_REQUIRED": "Email is required",
+      "INVALID_EMAIL": "Invalid email address",
+      "PASSWORD_REQUIRED": "Password is required",
+      "PASSWORD_TOO_SHORT": "Password must be at least 8 characters",
+      "FULL_NAME_REQUIRED": "Full name is required",
+      "GENDER_REQUIRED": "Gender is required",
+      "HEIGHT_REQUIRED": "Height is required",
+      "UNIT_REQUIRED": "Unit is required",
+      "WEIGHT_REQUIRED": "Weight is required",
+      "GOALS_REQUIRED": "At least one goal is required",
+      "FITNESS_LEVEL_REQUIRED": "Fitness level is required",
+      "PERFORMANCE_REQUIRED": "This performance field is required"
+    },
+    "BUTTONS": {
+      "NEXT": "Next",
+      "BACK": "Back",
+      "SUBMIT": "Submit"
+    }
   },
   "ERRORS": {
     "SOMETHING_WENT_WRONG": "Something went wrong",

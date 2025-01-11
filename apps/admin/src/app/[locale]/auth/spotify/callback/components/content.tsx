@@ -12,7 +12,10 @@ interface ContentProps {
   locale: string;
 }
 
-export default function Content({ code, locale }: ContentProps): JSX.Element {
+export default function Content({
+  code,
+  locale,
+}: ContentProps): JSX.Element | null {
   const {
     data: spotifyResponse,
     isSuccess,
@@ -29,7 +32,6 @@ export default function Content({ code, locale }: ContentProps): JSX.Element {
           access_token: spotifyResponse.data.access_token,
           refresh_token: spotifyResponse.data.refresh_token,
         });
-
         router.replace(`/${locale}${AdminPages.DASHBOARD}`);
       });
     }
@@ -39,6 +41,5 @@ export default function Content({ code, locale }: ContentProps): JSX.Element {
     throw new Error(error.message);
   }
 
-  // TODO: Loader
-  return <h1>Authenticating...</h1>;
+  return null;
 }

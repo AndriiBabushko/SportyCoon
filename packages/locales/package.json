@@ -2,8 +2,8 @@
   "name": "@sportycoon/locales",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
+  "main": "index.tsx",
+  "types": "./index.ts",
   "publishConfig": {
     "access": "public"
   },

@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-#npx commitlint --edit .git/COMMIT_EDITMSG
+npx commitlint --edit .git/COMMIT_EDITMSG
 yarn lint
 #yarn format

@@ -7,6 +7,8 @@ import {
   Menu,
   Check,
   ChevronRight,
+  EyeOff,
+  Eye,
 } from "lucide-react";
 
 const Icons = {
@@ -16,6 +18,8 @@ const Icons = {
   Check,
   ChevronRight,
   ArrowBigDown,
+  OpenedEye: Eye,
+  ClosedEye: EyeOff,
   Spotify: (props: LucideProps) => (
     <svg
       aria-label="spotify-icon"
@@ -76,6 +80,88 @@ const Icons = {
         d="M294.339 349.546C295.752 351.65 295.99 353.426 295.497 355.869C293.534 357.985 291.744 358.646 288.894 358.836C287.261 358.862 285.633 358.878 283.999 358.887C283.154 358.904 283.154 358.904 282.291 358.923C277.807 358.947 274.645 358.227 271.169 355.295C271.169 353.185 271.201 351.898 272.617 350.276C278.699 345.367 287.851 345.425 294.339 349.546V349.546Z"
         fill="#C5C5C5"
       />
+    </svg>
+  ),
+  AnimatedRaccoonLogo: (props: LucideProps) => (
+    <svg
+      fill="none"
+      height="418"
+      viewBox="0 0 566 418"
+      width="566"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M471.585 0.0229386C472.743 0.597811 472.743 0.597811 473.195 1.81079C473.333 2.31151 473.47 2.81107 473.612 3.32846C474.031 4.83462 474.446 6.26031 475.071 7.69749C480.835 23.2191 477.325 47.6511 472.633 63.2877..."
+        fill="#C5C5C5"
+      >
+        <animate
+          attributeName="fill"
+          dur="3s"
+          repeatCount="indefinite"
+          values="#C5C5C5;#FF5733;#C5C5C5"
+        />
+      </path>
+
+      <path
+        clipRule="evenodd"
+        d="M286.532 250.086L284.493 250.092L284.512 250.04C284.279 250.039 284.045 250.038 283.812 250.037C279.292 250.019 274.746 250 270.263 250.684C269.672 251.362 269.672 251.362 268.519 251.569..."
+        fill="#C5C5C5"
+        fillRule="evenodd"
+      >
+        <animateTransform
+          attributeName="transform"
+          dur="5s"
+          from="0 283 250"
+          repeatCount="indefinite"
+          to="360 283 250"
+          type="rotate"
+        />
+      </path>
+
+      <path
+        d="M152.426 242.619C154.123 242.739 155.803 242.896 157.495 243.086C158.242 243.168 158.242 243.168 159.001 243.251C170.18 244.504 170.18 244.504 172.033 245.476..."
+        fill="#C5C5C5"
+      >
+        <animate
+          attributeName="opacity"
+          dur="2s"
+          repeatCount="indefinite"
+          values="1;0.5;1"
+        />
+      </path>
+
+      <path
+        d="M411.344 242.044C411.918 242.234 412.491 242.424 413.082 242.619C412.75 244.844 411.698 246.155 410.186 247.793H409.027C408.836 248.362 408.645 248.931 408.448 249.518..."
+        fill="#C5C5C5"
+      >
+        <animateTransform
+          attributeName="transform"
+          dur="1.5s"
+          from="1"
+          repeatCount="indefinite"
+          to="1.2"
+          type="scale"
+        />
+      </path>
+
+      <path
+        d="M294.339 349.546C295.752 351.65 295.99 353.426 295.497 355.869C293.534 357.985 291.744 358.646 288.894 358.836C287.261 358.862 285.633 358.878 283.999 358.887..."
+        fill="#C5C5C5"
+      >
+        <animate
+          attributeName="stroke"
+          dur="4s"
+          repeatCount="indefinite"
+          values="#C5C5C5;#FF5733;#C5C5C5"
+        />
+        <animate
+          attributeName="stroke-width"
+          dur="4s"
+          repeatCount="indefinite"
+          values="1;3;1"
+        />
+      </path>
     </svg>
   ),
   SportycoonLogo: (props: LucideProps) => (

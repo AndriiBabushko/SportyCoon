@@ -9,19 +9,15 @@ export default async function setAuthTokens(tokens: AuthTokens): Promise<void> {
     try {
       const cookieStore = cookies();
 
-      if (tokens.access_token) {
-        cookieStore.set(
-          COOKIE_NAMES.ACCESS_TOKEN as string,
-          tokens.access_token
-        );
-      }
+      cookieStore.set(
+        COOKIE_NAMES.ACCESS_TOKEN as string,
+        tokens.access_token || ""
+      );
 
-      if (tokens.refresh_token) {
-        cookieStore.set(
-          COOKIE_NAMES.REFRESH_TOKEN as string,
-          tokens.refresh_token
-        );
-      }
+      cookieStore.set(
+        COOKIE_NAMES.REFRESH_TOKEN as string,
+        tokens.refresh_token || ""
+      );
 
       resolve();
     } catch (error) {

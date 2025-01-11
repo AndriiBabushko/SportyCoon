@@ -26,7 +26,7 @@
     },
     "prod": {
       "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL", "NEXT_PUBLIC_SPORTYCOON_API_URL", "NEXT_PUBLIC_ENV"],
-      "inputs": ["**/.env", "**/.env.production"],
+      "inputs": [".env.production"],
       "outputs": [".next/**", "!.next/cache/**", "storybook-static/**"],
       "dependsOn": ["^build:api"]
     },

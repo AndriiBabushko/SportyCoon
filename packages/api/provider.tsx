@@ -1,10 +1,18 @@
 "use client";
 
-import { ApolloClient, ApolloProvider } from "@apollo/client";
+import type { NormalizedCacheObject } from "@apollo/client";
+import {
+  ApolloLink,
+  InMemoryCache,
+  ApolloClient,
+  ApolloProvider,
+} from "@apollo/client";
 import type { FC } from "react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { defaultApolloClientOptions } from "./utils";
+import { useLoader } from "@sportycoon/ui";
+import { GQLPersistContext } from "./context";
+import { authLink, defaultApolloClientOptions, httpLink } from "./utils";
 import { queryClient } from "./utils/query-client";
 
 interface SportyCoonApiProviderProps {
@@ -19,19 +27,49 @@ const SportyCoonApiProvider: FC<SportyCoonApiProviderProps> = ({
   children,
   getAuthTokens,
 }) => {
-  return (
-    <ApolloProvider
-      client={
+  const { setRequestLoading } = useLoader();
+  const [client, setClient] =
+    useState<ApolloClient<NormalizedCacheObject> | null>(null);
+
+  useEffect(() => {
+    function init(): void {
+      const cache = new InMemoryCache();
+      const loaderLink = new ApolloLink((operation, forward) => {
+        setRequestLoading(true);
+
+        return forward(operation).map((response) => {
+          setRequestLoading(false);
+          return response;
+        });
+      });
+
+      setClient(
         new ApolloClient({
           ...defaultApolloClientOptions,
+          link: ApolloLink.from([loaderLink, authLink, httpLink]),
+          cache,
           defaultContext: {
             getAuthTokens,
           },
         })
-      }
-    >
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    </ApolloProvider>
+      );
+    }
+
+    init();
+  }, []);
+
+  if (!client) {
+    return null;
+  }
+
+  return (
+    <GQLPersistContext.Provider value={{ client }}>
+      <ApolloProvider client={client}>
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
+      </ApolloProvider>
+    </GQLPersistContext.Provider>
   );
 };
 

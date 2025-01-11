@@ -7,14 +7,16 @@
   "scripts": {
     "lint": "eslint \"**/*.ts*\""
   },
+  "dependencies": {
+    "@hookform/resolvers": "^3.10.0",
+    "@sportycoon/api": "*",
+    "@sportycoon/locales": "*",
+    "zod": "^3.23.8"
+  },
   "devDependencies": {
     "@sportycoon/eslint-config": "*",
     "@sportycoon/ts-config": "*",
     "eslint": "^8.38.0",
     "typescript": "5.3.3"
-  },
-  "dependencies": {
-    "@hookform/resolvers": "^3.6.0",
-    "zod": "^3.23.8"
   }
 }

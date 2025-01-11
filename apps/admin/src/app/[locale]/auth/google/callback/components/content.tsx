@@ -2,7 +2,7 @@
 
 import type { JSX } from "react";
 import { useEffect, useTransition } from "react";
-import { apolloClient, setContext, useGoogleAuth } from "@sportycoon/api";
+import { useGoogleAuth } from "@sportycoon/api";
 import { useRouter } from "next/navigation";
 import { AdminPages } from "@sportycoon/ui/lib";
 import { setAuthTokens } from "@admin/actions";
@@ -12,7 +12,10 @@ interface ContentProps {
   locale: string;
 }
 
-export default function Content({ code, locale }: ContentProps): JSX.Element {
+export default function Content({
+  code,
+  locale,
+}: ContentProps): JSX.Element | null {
   const {
     data: googleResponse,
     isError,
@@ -29,16 +32,8 @@ export default function Content({ code, locale }: ContentProps): JSX.Element {
           access_token: googleResponse.data.access_token,
           refresh_token: googleResponse.data.refresh_token,
         });
-
-        apolloClient.setLink(
-          setContext(() => ({
-            headers: {
-              authorization: `Bearer ${googleResponse.data.access_token}`,
-            },
-          }))
-        );
+        router.replace(`/${locale}${AdminPages.DASHBOARD}`);
       });
-      router.replace(`/${locale}${AdminPages.DASHBOARD}`);
     }
   }, [isSuccess, googleResponse, router, locale]);
 
@@ -46,6 +41,5 @@ export default function Content({ code, locale }: ContentProps): JSX.Element {
     throw new Error(error.message);
   }
 
-  // TODO: Loader
-  return <h1>Authenticating...</h1>;
+  return null;
 }

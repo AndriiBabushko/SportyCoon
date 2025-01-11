@@ -8,7 +8,8 @@
     "prod": "next dev --port 4000",
     "build": "next build",
     "start": "next start --port 8080",
-    "lint": "next lint"
+    "lint": "next lint",
+    "eslint:fix": "NODE_OPTIONS=--max-old-space-size=8192 eslint --fix ."
   },
   "dependencies": {
     "@chakra-ui/next-js": "2.4.3",
@@ -21,6 +22,7 @@
     "@sportycoon/locales": "*",
     "@sportycoon/ui": "*",
     "@sportycoon/validation": "*",
+    "chakra-react-select": "5.0.2",
     "eslint-config-next": "13",
     "framer-motion": "^11.15.0",
     "next": "^14.2.21",
@@ -28,7 +30,8 @@
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "react-hook-form": "^7.52.0",
-    "react-icons": "^5.4.0"
+    "react-icons": "^5.4.0",
+    "next-intl": "^3.26.3"
   },
   "devDependencies": {
     "@sportycoon/eslint-config": "*",

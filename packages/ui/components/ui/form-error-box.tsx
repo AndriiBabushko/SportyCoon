@@ -1,9 +1,15 @@
 import type { PropsWithChildren, JSX } from "react";
+import { cn } from "@sportycoon/ui/lib";
 
-type FormErrorMessageProps = PropsWithChildren;
+interface FormErrorMessageProps extends PropsWithChildren {
+  className?: string;
+}
 
 export default function FormErrorBox({
   children,
+  className,
 }: FormErrorMessageProps): JSX.Element {
-  return <div className="flex-row items-center p-[8px]">{children}</div>;
+  return (
+    <div className={cn("flex-row items-center", className)}>{children}</div>
+  );
 }

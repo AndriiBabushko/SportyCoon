@@ -36,7 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 /apps/main/.idea/workspace.xml
-__generated__
+__generated__/fragment-masking.ts
+__generated__/gql.ts
+__generated__/index.ts
 storybook-static/
 
 .idea

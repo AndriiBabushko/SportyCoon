@@ -1,8 +1,8 @@
+import process from "node:process";
 import { withSentryConfig } from "@sentry/nextjs";
-import createNextIntlPlugin from 'next-intl/plugin';
-import process from "process";
+import createNextIntlPlugin from "next-intl/plugin";
 
-const withNextIntl = createNextIntlPlugin('./src/i18n.ts');
+const withNextIntl = createNextIntlPlugin("./src/i18n.ts");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -12,7 +12,7 @@ const nextConfig = {
     optimizePackageImports: ["@chakra-ui/react"],
   },
   env: {
-    _next_intl_trailing_slash: 'false',
+    _next_intl_trailing_slash: "false",
   },
 };
 

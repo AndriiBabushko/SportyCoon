@@ -9,7 +9,7 @@ const Classes = {
   type: {
     success: "text-green-500",
     warning: "text-yellow-500",
-    error: "text-red-500",
+    error: "text-[#FC8181]",
   },
   textInfoVariant: {
     nicoMoji: "--font-nicoMoji",
@@ -43,6 +43,7 @@ function TextInfo({
   return (
     <Paragraph
       className={cn(textInfoVariants({ type, textInfoVariant, className }))}
+      data-info-type={type}
       {...props}
     >
       {children}

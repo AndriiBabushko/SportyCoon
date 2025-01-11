@@ -2,7 +2,7 @@
 
 import type { JSX } from "react";
 import { Box, HStack, useColorModeValue, VStack } from "@chakra-ui/react";
-import { Paragraph, Heading, Button, AdminPages, Icons } from "@sportycoon/ui";
+import { Heading, Button, AdminPages, Icons } from "@sportycoon/ui";
 import {
   TRANSLATES_NAMESPACES,
   useTranslations,
@@ -15,8 +15,6 @@ export default function Content(): JSX.Element {
   const bgColor = useColorModeValue("gray.100", "gray.900");
   const cardBg = useColorModeValue("white", "gray.800");
   const textColor = useColorModeValue("gray.800", "gray.100");
-  const paragraphColor = useColorModeValue("gray.600", "gray.400");
-  const secondaryTextColor = useColorModeValue("gray.500", "gray.300");
   const iconsFill = useColorModeValue("fill-primary", "fill-secondary");
   const loginRegisterVariant = useColorModeValue("primary", "secondary");
 
@@ -44,30 +42,22 @@ export default function Content(): JSX.Element {
           <Icons.SportycoonLogo height={60} />
         </Box>
 
-        <Heading as="h1" variant="montserratBold">
+        <Heading as="h1" className="text-[24px]" variant="montserratBold">
           {translateAuth("TITLE")}
         </Heading>
 
-        <Paragraph color={paragraphColor}>
-          {translateAuth("DESCRIPTION")}
-        </Paragraph>
-
         <HStack gap={4} justify="center" width="100%">
-          <Link href={AdminPages.LOGIN}>
-            <Button size="xl" variant={loginRegisterVariant}>
+          <Link className="w-full" href={AdminPages.LOGIN}>
+            <Button fullWidth size="xl" variant={loginRegisterVariant}>
               {translateAuth("LOGIN")}
             </Button>
           </Link>
-          <Link href={AdminPages.REGISTER}>
-            <Button size="xl" variant={loginRegisterVariant}>
+          <Link className="w-full" href={AdminPages.REGISTER}>
+            <Button fullWidth size="xl" variant={loginRegisterVariant}>
               {translateAuth("REGISTER")}
             </Button>
           </Link>
         </HStack>
-
-        <Paragraph color={secondaryTextColor}>
-          {translateAuth("THIRD_PARTY")}
-        </Paragraph>
 
         <HStack gap={4} justify="center" width="100%">
           <Link

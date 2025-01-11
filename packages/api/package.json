@@ -18,8 +18,8 @@
   "dependencies": {
     "@apollo/client": "^3.10.4",
     "@parcel/watcher": "^2.4.1",
-    "@tanstack/react-query": "^5.45.1",
     "@sportycoon/ui": "*",
+    "@tanstack/react-query": "^5.45.1",
     "axios": "^1.7.2",
     "react": "^18.2.0"
   },

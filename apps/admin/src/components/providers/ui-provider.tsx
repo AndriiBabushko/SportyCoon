@@ -9,13 +9,14 @@ import {
   cookieStorageManager,
   extendTheme,
 } from "@chakra-ui/react";
+import { Loader } from "@sportycoon/ui";
 
 interface UIProviderProps {
   children: JSX.Element | ReactNode;
   colorMode?: ColorMode;
 }
 
-export function UIProvider({
+export default function UIProvider({
   children,
   colorMode,
 }: UIProviderProps): JSX.Element {
@@ -28,6 +29,7 @@ export function UIProvider({
 
   return (
     <>
+      <Loader />
       <ColorModeScript
         initialColorMode={theme.config.initialColorMode}
         type="cookie"

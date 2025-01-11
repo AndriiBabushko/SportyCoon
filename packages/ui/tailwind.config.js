@@ -24,6 +24,15 @@ module.exports = {
         dark: "#333333", // чорний або темний колір для тексту
         light: "#f5f5f5", // світлий колір для фону
       },
+      animation: {
+        spin: "pulse 1.5s ease-in-out infinite",
+      },
+      keyframes: {
+        pulse: {
+          "0%, 100%": { transform: "scale(1)", opacity: "1" },
+          "50%": { transform: "scale(1.2)", opacity: "0.7" },
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

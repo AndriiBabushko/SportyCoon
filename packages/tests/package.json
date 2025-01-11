@@ -11,6 +11,7 @@
     "@sportycoon/admin": "*",
     "@sportycoon/api": "*",
     "@sportycoon/ui": "*",
+    "@sportycoon/validation": "*",
     "@sportycoon/locales": "*",
     "start-server-and-test": "^2.0.5"
   },
